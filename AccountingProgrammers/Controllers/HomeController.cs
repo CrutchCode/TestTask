@@ -13,7 +13,7 @@ namespace AccountingProgrammers.Controllers
         private readonly IProjectRepository _dbProject;
         private readonly IUserRepository _dbUser;
 
-        public HomeController(ILogger<HomeController> logger, IProjectRepository projectRepository, IUserRepository userRepository)
+        public HomeController(IProjectRepository projectRepository, IUserRepository userRepository)
         {
             _dbProject = projectRepository;
             _dbUser = userRepository;
