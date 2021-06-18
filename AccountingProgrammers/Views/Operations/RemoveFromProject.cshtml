@@ -1,0 +1,15 @@
+﻿@model ViewModelUserAndProject
+<h2>Зняття програміста з проекта</h2>
+<div>
+    <form method="post" asp-action="RemoveFromProject" asp-controller="Operations">
+        <label>Виберіть програміста:</label>
+        <select name="userId">
+            @foreach (var user in Model.Users)
+            {
+                <option value="@user.Id">@user.UserName</option>
+            }
+        </select>
+        <br />
+        <input type="submit" value="Зняти" />
+    </form>
+</div>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DatabaseAccounting.Models.User>
+<div>
+    <ul>
+        <li><a asp-controller="User" asp-action="CreateUser">Добавити програміста</a></li>
+    </ul>
+</div>
+<div>
+    <form method="post">
+        <div>
+            <table class="table-condensed" cellspacing="5" cellpadding="10" border="1">
+                <tr>
+                    <td>Імя</td>
+                    <td>Фамілія</td>
+                    <td>Посада</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.UserName</td>
+                        <td>@user.UserLastName</td>
+                        <td>@user.UserPosition</td>
+                        <td><a href="~/User/EditUser/@user.Id">Змінити програміста</a></td>
+                        <td><a href="~/User/DeleteUser/@user.Id">Видалити програміста</a></td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </form>
+</div>

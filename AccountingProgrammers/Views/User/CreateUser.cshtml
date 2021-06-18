@@ -1,0 +1,19 @@
+﻿@model DatabaseAccounting.Models.User
+<h2>Додавання користувачів</h2>
+<form asp-action="CreateUser" asp-controller="User">
+    <div class="form-group">
+        <label asp-for="UserName" class="control-label">Імя</label>
+        <input type="text" asp-for="UserName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="UserLastName" class="control-label">Фамілія</label>
+        <input type="text" asp-for="UserLastName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="UserPosition" class="control-label">Посада</label>
+        <input type="text" asp-for="UserPosition" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Добавити" class="btn btn-default" />
+    </div>
+</form>

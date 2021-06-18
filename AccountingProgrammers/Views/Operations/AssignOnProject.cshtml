@@ -1,0 +1,23 @@
+﻿@model ViewModelUserAndProject
+<h2>Призначення на проект</h2>
+<div>
+    <form method="post" asp-action="AssignOnProject" asp-controller="Operations">
+        <label>Виберіть проект:</label>
+        <select name="projectId">
+            @foreach (var project in Model.Projects)
+            {
+                <option value="@project.Id">@project.ProjectName</option>
+            }
+        </select>
+        <br />
+        <label>Виберіть програміста:</label>
+        <select name="userId">
+            @foreach (var user in Model.Users)
+            {
+                <option value="@user.Id">@user.UserName</option>
+            }
+        </select>
+        <br />
+        <input type="submit" value="Призначити" />
+    </form>
+</div>

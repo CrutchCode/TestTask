@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DatabaseAccounting.Models.Project>
+    <div>
+        <ul>
+            <li><a asp-controller="Project" asp-action="CreateProject">Створити проект</a></li>
+        </ul>
+    </div>
+    <div>
+        <form method="post">
+            <div>
+                <table class="table-condensed" cellspacing="5" cellpadding="10" border="1">
+                    <tr>
+                        <td>Проект</td>
+                        <td>Опис</td>
+                        <td>Дата створення</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    @foreach (var project in Model)
+                    {
+                        <tr>
+                            <td>@project.ProjectName</td>
+                            <td>@project.Description</td>
+                            <td>@project.DateOfCreation</td>
+                            <td><a href="~/Project/EditProject/@project.Id">Редагувати проект</a></td>
+                            <td><a href="~/Project/DeleteProject/@project.Id">Видалити проект</a></td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </form>
+    </div>

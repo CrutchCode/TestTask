@@ -1,0 +1,19 @@
+﻿@model DatabaseAccounting.Models.User
+<h2>Редагування користувачів</h2>
+<form asp-action="EditUser" asp-controller="User">
+    <div class="form-group">
+        <label asp-for="UserName" class="control-label">Змінити імя</label>
+        <input type="text" asp-for="UserName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="UserLastName" class="control-label">Змінити фамілію</label>
+        <input type="text" asp-for="UserLastName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="UserPosition" class="control-label">Посада</label>
+        <input type="text" asp-for="UserPosition" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Редагувати" class="btn btn-default" />
+    </div>
+</form>
